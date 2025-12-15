@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bluesky-cli"
+version = "0.1.0"
+description = "Enhanced CLI for BlueSky API interactions with AI-powered features"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Luke Steuber", email = "luke@lukesteuber.com"}
+]
+requires-python = ">=3.8"
+dependencies = [
+    "requests>=2.25.0",
+    "openai>=1.0.0",
+    "rich>=13.0.0",
+    "inquirer>=3.0.0",
+    "python-dotenv>=1.0.0"
+]
+
+[project.scripts]
+bluesky = "bluesky_cli.cli:main"
+bsky = "bluesky_cli.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py38"
+
+[tool.black]
+line-length = 100
